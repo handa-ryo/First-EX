@@ -198,13 +198,74 @@ body {
 
 @media screen and (max-width:821px) {
   .second-container {
-    padding: 140px 0;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .second-container-item {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .second-container-item__text {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .second-container-item__img {
+    width: 100%;
+  }
+
+  .second-container-item__img img {
+    margin-bottom: 100px;
+  }
+
+  .second-container-item__text h2 {
+    font-size: 36px;
+    padding-bottom: 16px;
+  }
+
+  .second-container-item__text p {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width:431px) {
+
+  .second-container-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .second-container-item__text {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .second-container-item__img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .second-container-item__img img {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .second-container-item__text h2 {
+    color: #444444;
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 16px;
+  }
+
+  .second-container-item__text p {
+    font-size: 16px;
+    line-height: 2.4em;
   }
 }
 
@@ -214,7 +275,7 @@ body {
 }
 
 .third-container-first {
-  width: 70%;
+  width: 1180px;
   margin: 0 auto;
 }
 
@@ -236,6 +297,7 @@ body {
 
 .third-container-first-item {
   display: flex;
+  justify-content: space-around;
   margin-bottom: 96px;
 }
 
@@ -268,26 +330,14 @@ body {
 .third-container-first-item_one-img {
   position: absolute;
   bottom: 0;
-  left: 25%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 
 .third-container-second {
   width: 70%;
   margin: 0 auto;
-}
-
-@media screen and (max-width:821px) {
-  .third-container-first-item {
-    display: block;
-  }
-
-  .third-container-first-item_one {
-    margin: 0 auto;
-  }
-
-  .third-container-first-item_one:nth-child(2) {
-    margin: 20px auto;
-  }
 }
 
 .third-container-second h2 {
@@ -364,10 +414,64 @@ body {
   color: #444444;
 }
 
+@media screen and (max-width:1200px) {
+  .third-container-first {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:951px) {
+  .third-container-first-item_one {
+    height: 671px;
+  }
+}
+
+@media screen and (max-width:821px) {
+  .third-container-first {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .third-container-first-item {
+    display: block;
+  }
+
+  .third-container-first-item_one {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .third-container-first-item_one:nth-child(2) {
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width:431px) {
+  .third-container-second {
+    width: 90%;
+  }
+
+  .third-container-second-item table tbody tr td:nth-child(1) {
+    display: inline-flex;
+    margin: 0 16px 0 0;
+  }
+
+  .third-container-second-item table tbody tr td:nth-child(2) {
+    display: inline-flex;
+    margin: 0;
+  }
+
+  /* 3つ目のセル（本文）の設定 */
+  .third-container-second-item table tbody tr td:nth-child(3) {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
 .third-container-second-item div p {
   text-align: right;
   margin-right: 5%;
-  /* テーブルの幅(90%)に合わせて調整 */
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
