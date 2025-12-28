@@ -1,4 +1,5 @@
 body {
+  min-width: 320px;
   font-family: Noto Sans JP, sans-serif;
 }
 
@@ -432,6 +433,43 @@ body {
   font-weight: bold;
   font-size: 16px;
   color: #444444;
+}
+
+@media screen and (max-width: 821px) {
+  .p-news-table td {
+    padding: 12px 3px;
+    vertical-align: middle;
+  }
+
+  /* 親のtrをフレックスボックスにして折り返しを許可する */
+  .p-news-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 0;
+    /* trに余白を持たせる */
+  }
+
+  /* 日付とラベル（1番目と2番目のtd） */
+  .p-news-table__date,
+  .p-news-table__label {
+    width: auto;
+    /* 横幅をコンテンツに合わせる */
+    border-bottom: none;
+    /* セルごとの線は不要 */
+    padding: 0 10px 10px 0;
+    /* 下に少し余白を作る */
+  }
+
+  /* テキスト（3番目のtd） */
+  .p-news-table__text {
+    display: block;
+    /* ブロック化して一行占有させる */
+    width: 100%;
+    /* 横幅いっぱいにして強制改行 */
+    padding: 0;
+    /* 余白調整 */
+    border-bottom: none;
+  }
 }
 
 /* すべてを見るボタン */
