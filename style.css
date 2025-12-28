@@ -2,88 +2,103 @@ body {
   font-family: Noto Sans JP, sans-serif;
 }
 
-.header {
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.l-header {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Project
+   ========================================================================== */
+.p-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
+  /* 数値はオリジナルを維持 */
   padding: 29px clamp(0.188rem, -5.683rem + 25.05vw, 24.375rem);
 }
 
-.header-boxes-img {
+.p-header__logo-img {
   width: 100%;
 }
 
-.header-boxes__item-text-sp {
+.p-header__text.-pc {
+  /* PC用テキストのスタイル（必要に応じて） */
+}
+
+.p-header__text.-sp {
   font-size: 14px;
   height: 20px;
-}
-
-.header-boxes__item-text-sp {
   display: none;
+  /* 初期状態は非表示 */
 }
 
-.header-boxes__item {
+.p-header__tel {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
   height: 35px;
 }
 
-.header-boxes__item img {
+.p-header__tel img {
   margin-right: 6px;
 }
 
-.header-boxes__item p {
+.p-header__tel-number {
   color: #21A937;
   font-size: 24px;
   font-weight: bold;
 }
 
-
+/* ==========================================================================
+   Media Queries (Headerのみ)
+   ========================================================================== */
 @media screen and (max-width:821px) {
-  .header {
+  .p-header {
     padding: 29px 32px;
   }
 }
 
 @media screen and (max-width: 651px) {
-  .header-boxes__item-text-sp {
+  .p-header__text.-sp {
     display: block;
   }
 
-  .header-boxes__item-text-pc {
+  .p-header__text.-pc {
     display: none;
   }
 
-  .header-boxes__item {
+  .p-header__tel {
     margin-top: 18px;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .header {
+  .p-header {
     padding: 20px 16px;
   }
 
-  .header-boxes:first-child {
+  /* 子要素セレクタを使わず、詳細度を保つためにクラス名で指定 */
+  .p-header__logo {
     width: 50%;
   }
 
-  .header-boxes-img {
-    width: 100%;
-  }
-
-  .header-boxes__item-text-sp {
+  .p-header__text.-sp {
     font-size: 12px;
   }
 
-  .header-boxes__item p {
+  .p-header__tel-number {
     font-size: 16px;
   }
 }
 
-.fv {
+/* ==========================================================================
+   Project: FV
+   ========================================================================== */
+.p-fv {
   height: 947px;
   background-image: url(./img/fv.jpg);
   background-size: cover;
@@ -91,7 +106,7 @@ body {
   position: relative;
 }
 
-.copy-boxes {
+.p-fv__copy-container {
   position: absolute;
   margin-top: 133px;
   margin-left: 211px;
@@ -99,14 +114,18 @@ body {
   flex-direction: row-reverse;
 }
 
-.copy-boxes__item {
+.p-fv__copy-item {
   width: 102px;
   height: 565px;
   background-color: #fff;
   padding: 24px 0;
 }
 
-.copy-boxes__item-text {
+.p-fv__copy-item:first-child {
+  margin-left: 80px;
+}
+
+.p-fv__copy-text {
   writing-mode: vertical-rl;
   font-size: 28px;
   font-weight: bold;
@@ -115,63 +134,68 @@ body {
   margin: 0 auto;
 }
 
-.copy-boxes__item:first-child {
-  margin-left: 80px;
-}
-
-.text-color-01 {
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+.u-text-green {
   color: #21A937;
 }
 
+/* ==========================================================================
+   Media Queries (FVのみ)
+   ========================================================================== */
 @media screen and (max-width:821px) {
-  .fv {
+  .p-fv {
     background-position: 70%;
   }
 
-  .copy-boxes {
+  .p-fv__copy-container {
     margin-left: 8%;
   }
 
-  .copy-boxes__item:first-child {
+  .p-fv__copy-item:first-child {
     margin-left: 20px;
   }
 }
 
 @media screen and (max-width: 521px) {
-  .fv {
+  .p-fv {
     height: 600px;
   }
 
-  .copy-boxes__item {
+  .p-fv__copy-item {
     width: 50px;
     height: auto;
   }
 
-  .copy-boxes__item-text {
+  .p-fv__copy-text {
     font-size: 20px;
   }
 
-  .copy-boxes {
+  .p-fv__copy-container {
     margin-top: 60px;
   }
 }
 
-.second-container {
+/* ==========================================================================
+   Project: Belief
+   ========================================================================== */
+.p-belief {
   padding: 140px 0;
 }
 
-.second-container-item {
+.p-belief__inner {
   width: 70%;
   margin: 0 auto;
   display: flex;
 }
 
-.second-container-item__text {
+.p-belief__content {
   width: 40%;
   padding-right: 50px;
 }
 
-.second-container-item__text h2 {
+.p-belief__title {
   color: #444444;
   font-weight: bold;
   font-size: 24px;
@@ -183,89 +207,350 @@ body {
   padding-bottom: 67px;
 }
 
-.second-container-item__text p {
+.p-belief__text {
   font-size: 16px;
   line-height: 2.4em;
 }
 
-.second-container-item__img {
+.p-belief__img-wrapper {
   width: 60%;
 }
 
-.second-container-item__img img {
+.p-belief__img-wrapper img {
   width: 100%;
 }
 
+/* ==========================================================================
+   Media Queries (Beliefのみ)
+   ========================================================================== */
 @media screen and (max-width:821px) {
-  .second-container {
+  .p-belief {
     width: 80%;
     margin: 0 auto;
   }
 
-  .second-container-item {
+  .p-belief__inner {
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .second-container-item__text {
+  .p-belief__content {
     width: 100%;
     padding-right: 0;
     text-align: center;
   }
 
-  .second-container-item__img {
+  .p-belief__img-wrapper {
     width: 100%;
   }
 
-  .second-container-item__img img {
+  .p-belief__img-wrapper img {
     margin-bottom: 100px;
   }
 
-  .second-container-item__text h2 {
+  .p-belief__title {
     font-size: 36px;
     padding-bottom: 16px;
   }
 
-  .second-container-item__text p {
+  .p-belief__text {
     font-size: 24px;
   }
 }
 
 @media screen and (max-width:431px) {
-
-  .second-container-item {
+  .p-belief__inner {
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .second-container-item__text {
+  .p-belief__content {
     width: 100%;
     padding-right: 0;
     text-align: center;
   }
 
-  .second-container-item__img {
+  .p-belief__img-wrapper {
     width: 100%;
     margin: 0 auto;
   }
 
-  .second-container-item__img img {
+  .p-belief__img-wrapper img {
     width: 100%;
     margin-bottom: 100px;
   }
 
-  .second-container-item__text h2 {
+  .p-belief__title {
     color: #444444;
     font-weight: bold;
     font-size: 24px;
     padding-bottom: 16px;
   }
 
-  .second-container-item__text p {
+  .p-belief__text {
     font-size: 16px;
     line-height: 2.4em;
+  }
+}
+
+/* 元：.third-container */
+.p-main-content {
+  padding: 80px 0;
+  background-color: #F5FCF8;
+}
+
+/* --- Treatment Section --- */
+.p-treatment {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .p-treatment {
+    width: 90%;
+  }
+}
+
+.p-treatment h2 {
+  font-size: 24px;
+  text-decoration-color: #99E5A5;
+  text-decoration-line: underline;
+  text-decoration-thickness: 10px;
+  text-underline-offset: -3px;
+  text-decoration-skip-ink: none;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.p-treatment p:first-of-type {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.p-treatment__list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 96px;
+}
+
+.p-treatment__card {
+  background-color: #FFFFFF;
+  width: 380px;
+  height: 591px;
+  border: #C9C9C9 solid 2px;
+  padding: 24px;
+  position: relative;
+}
+
+.p-treatment__card h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.p-treatment__card p {
+  letter-spacing: 0.24em;
+  font-size: 16px;
+  text-align-last: left;
+  line-height: 2em;
+}
+
+.p-treatment__card:nth-child(2) {
+  margin: 0 16px;
+}
+
+.p-treatment__card-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+/* --- News Section --- */
+.p-news {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.p-news h2 {
+  font-size: 24px;
+  text-decoration-color: #99E5A5;
+  text-decoration-line: underline;
+  text-decoration-thickness: 10px;
+  text-underline-offset: -3px;
+  text-decoration-skip-ink: none;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* 白背景のボックス */
+.p-news__body {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 40px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* テーブル本体 */
+.p-news-table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.p-news-table tr {
+  border-bottom: 1px solid #444444;
+}
+
+.p-news-table td {
+  padding: 25px 3px;
+  vertical-align: middle;
+}
+
+/* 各セルの詳細指定（nth-childをクラスへ置換） */
+.p-news-table__date {
+  font-weight: bold;
+  font-size: 16px;
+  color: #21A937;
+}
+
+.p-news-table__label span {
+  display: inline-block;
+  background-color: #444444;
+  color: #FFFFFF;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 2px;
+  width: 80px;
+  text-align: center;
+}
+
+.p-news-table__text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #444444;
+}
+
+/* すべてを見るボタン */
+.p-news__more p {
+  text-align: right;
+  margin-right: 5%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.p-news__more p::after {
+  content: "";
+  display: inline-block;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #333;
+}
+
+/* ==========================================================================
+   Media Queries: p-main-content (旧 third-container)
+   ========================================================================== */
+
+/* タブレット・小型PCサイズ (821px以下) */
+@media screen and (max-width: 821px) {
+
+  /* 治療内容セクション全体の幅調整 */
+  .p-treatment {
+    width: 60%;
+  }
+
+  /* カードの並びを縦方向に変更 */
+  .p-treatment__list {
+    display: block;
+  }
+
+  /* 各カードの横幅を調整 */
+  .p-treatment__card {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  /* 2番目のカードの余白リセット（縦並びになるため） */
+  .p-treatment__card:nth-child(2) {
+    margin: 20px auto;
+  }
+}
+
+/* スマートフォンサイズ (550px以下) */
+@media screen and (max-width: 550px) {
+
+  /* セクション全体の余白調整 */
+  .p-main-content {
+    padding: 60px 0;
+  }
+
+  /* 治療内容：タイトルとリード文の余白 */
+  .p-treatment h2 {
+    margin-bottom: 24px;
+  }
+
+  .p-treatment p:first-of-type {
+    margin-bottom: 24px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* カード自体のサイズと余白調整 */
+  .p-treatment__card {
+    width: 100%;
+    height: auto;
+    /* 高さを自動に */
+    padding: 16px;
+    margin-bottom: 40px;
+  }
+
+  .p-treatment__card h3 {
+    font-size: 18px;
+  }
+
+  .p-treatment__card p {
+    font-size: 14px;
+    padding-bottom: 150px;
+    /* 画像スペースの確保 */
+  }
+
+  /* お知らせ：セクションの幅を広げる */
+  .p-news {
+    width: 90%;
+  }
+
+  /* お知らせ：タイトルの余白 */
+  .p-news h2 {
+    margin-bottom: 24px;
+  }
+
+  /* お知らせ：テーブルの文字サイズ等 */
+  .p-news-table__date,
+  .p-news-table__text {
+    font-size: 14px;
+  }
+}
+
+/* 極小デバイス (431px以下) */
+@media screen and (max-width: 431px) {
+
+  /* 治療内容：カードの並び */
+  .p-treatment {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .p-treatment__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
