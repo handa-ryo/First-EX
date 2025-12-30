@@ -225,10 +225,7 @@ body {
   width: 60%;
 }
 
-/* .p-belief__img-wrapper img {
-  width: 100%;
-} */
-.p-belief__inner img {
+.p-belief__img-wrapper img {
   width: 690px;
 }
 
@@ -242,9 +239,13 @@ body {
     box-sizing: content-box;
   }
 
+  .p-belief__img-wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .p-belief__inner img {
-    width: 60%;
-    /* aspect-ratio: 38/21; */
+    width: 100%;
   }
 }
 
@@ -269,6 +270,7 @@ body {
 
   .p-belief__content {
     width: 100%;
+    padding-left: 0;
     padding-right: 0;
     text-align: center;
   }
@@ -408,6 +410,12 @@ body {
 
   .p-treatment__card {
     width: 30%;
+    height: auto;
+  }
+
+  .p-treatment__card p {
+    line-height: 2.0em;
+    margin-bottom: 187px;
   }
 }
 
@@ -440,7 +448,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 28px;
   padding-top: 28px;
-  padding-bottom: 32px;
+  padding-bottom: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-right: auto;
   margin-left: auto;
@@ -501,6 +509,17 @@ body {
 @media screen and (max-width: 821px) {
   .p-news-table td {
     padding: 12px 3px;
+    vertical-align: middle;
+  }
+
+  .p-news-table td.p-news-table__date {
+    padding: 18px 12px;
+    margin-top: 5px;
+    vertical-align: middle;
+  }
+
+  .p-news-table td.p-news-table__text {
+    padding-top: 0;
     vertical-align: middle;
   }
 
@@ -943,7 +962,7 @@ footer {
   padding-right: 10px;
   font-size: 14px;
   margin-top: 19px;
-  padding-top: 3px;
+  padding-top: 10px;
   font-weight: 400;
 }
 
