@@ -32,10 +32,12 @@ body {
 
 .p-header__text.-pc {
   font-size: 14px;
+  color: #444444;
 }
 
 .p-header__text.-sp {
   font-size: 14px;
+  color: #444444;
   height: 20px;
   display: none;
   /* 初期状態は非表示 */
@@ -189,7 +191,7 @@ body {
    Project: Belief
    ========================================================================== */
 .p-belief {
-  padding: 160px 0 88px;
+  padding: clamp(4rem, 2.544rem + 6.21vw, 10rem) 0 clamp(2rem, 1.15rem + 3.62vw, 5.5rem);
 }
 
 .p-belief__inner {
@@ -218,7 +220,16 @@ body {
 
 .p-belief__text {
   font-size: 16px;
+  color: #444444;
   line-height: 2.4em;
+}
+
+.p-belief__text-pc {
+  display: block;
+}
+
+.p-belief__text-sp {
+  display: none;
 }
 
 .p-belief__img-wrapper {
@@ -280,20 +291,19 @@ body {
   }
 
   .p-belief__img-wrapper img {
-    margin-bottom: 100px;
-  }
-
-  .p-belief__title {
-    font-size: 36px;
-    padding-bottom: 16px;
-  }
-
-  .p-belief__text {
-    font-size: 24px;
+    margin-bottom: clamp(2.5rem, -0.653rem + 13.45vw, 6.25rem);
   }
 }
 
 @media screen and (max-width:431px) {
+  .p-belief__text-pc {
+    display: none;
+  }
+
+  .p-belief__text-sp {
+    display: block;
+  }
+
   .p-belief__inner {
     width: 100%;
     display: flex;
@@ -313,19 +323,10 @@ body {
 
   .p-belief__img-wrapper img {
     width: 100%;
-    margin-bottom: 100px;
   }
 
   .p-belief__title {
-    color: #444444;
-    font-weight: bold;
-    font-size: 24px;
-    padding-bottom: 16px;
-  }
-
-  .p-belief__text {
-    font-size: 16px;
-    line-height: 2.4em;
+    font-size: 22px;
   }
 }
 
@@ -339,10 +340,12 @@ body {
 .p-treatment {
   width: 1180px;
   margin: 0 auto;
+  color: #444444;
 }
 
 .p-treatment h2 {
   font-size: 24px;
+  font-weight: 700;
   text-decoration-color: #99E5A5;
   text-decoration-line: underline;
   text-decoration-thickness: 10px;
@@ -355,6 +358,14 @@ body {
 .p-treatment>p {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.p-treatment__text-pc {
+  display: block;
+}
+
+.p-treatment__text-sp {
+  display: none;
 }
 
 .p-treatment__list {
@@ -380,15 +391,15 @@ body {
 .p-treatment__card h3 {
   text-align: center;
   font-size: 24px;
+  font-weight: 700;
   margin-bottom: 52px;
 }
 
 .p-treatment__card p {
-  /* letter-spacing: 0.24em; */
   font-size: 16px;
+  font-weight: 700;
   text-align: left;
   line-height: 2.4em;
-  /* width: 306px; */
 }
 
 .p-treatment__card:nth-child(2) {
@@ -419,6 +430,12 @@ body {
   }
 }
 
+@media screen and (max-width: 431px) {
+  .p-treatment h2 {
+    font-size: 22px;
+  }
+}
+
 /* --- News Section --- */
 .p-news {
   width: 1180px;
@@ -434,6 +451,7 @@ body {
 .p-news h2 {
   font-size: 24px;
   font-weight: 700;
+  color: #444444;
   text-decoration-color: #99E5A5;
   text-decoration-line: underline;
   text-decoration-thickness: 10px;
@@ -554,6 +572,12 @@ body {
   }
 }
 
+@media screen and (max-width: 431px) {
+  .p-news h2 {
+    font-size: 22px;
+  }
+}
+
 /* すべてを見るボタン */
 .p-news__more p {
   text-align: right;
@@ -561,6 +585,7 @@ body {
   margin-right: 4%;
   font-size: 16px;
   font-weight: bold;
+  color: #444444;
   cursor: pointer;
 }
 
@@ -617,7 +642,13 @@ body {
     margin-bottom: 24px;
   }
 
-  .p-treatment p:first-of-type {
+  .p-treatment>p {
+    margin-bottom: 24px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .p-treatment__card p:first-of-type {
     margin-bottom: 24px;
     font-size: 14px;
     text-align: left;
@@ -672,226 +703,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-}
-
-.third-container {
-  padding: 80px 0;
-  background-color: #F5FCF8;
-}
-
-.third-container-first {
-  width: 1180px;
-  margin: 0 auto;
-}
-
-.third-container-first h2 {
-  font-size: 24px;
-  text-decoration-color: #99E5A5;
-  text-decoration-line: underline;
-  text-decoration-thickness: 10px;
-  text-underline-offset: -3px;
-  text-decoration-skip-ink: none;
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.third-container-first p:first-of-type {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.third-container-first-item {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 96px;
-}
-
-.third-container-first-item_one {
-  background-color: #FFFFFF;
-  width: 380px;
-  height: 591px;
-  border: #C9C9C9 solid 2px;
-  padding: 24px;
-  position: relative;
-}
-
-.third-container-first-item_one h3 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.third-container-first-item_one p {
-  letter-spacing: 0.24em;
-  font-size: 16px;
-  text-align-last: left;
-  line-height: 2em;
-}
-
-.third-container-first-item_one:nth-child(2) {
-  margin: 0 16px;
-}
-
-.third-container-first-item_one-img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-}
-
-.third-container-second {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.third-container-second h2 {
-  font-size: 24px;
-  text-decoration-color: #99E5A5;
-  text-decoration-line: underline;
-  text-decoration-thickness: 10px;
-  text-underline-offset: -3px;
-  text-decoration-skip-ink: none;
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.third-container-second p:first-of-type {
-  text-align: right;
-  margin-bottom: 48px;
-}
-
-.third-container-second-item {
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  /* height: 390px; */
-  padding: 40px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.third-container-second-item table {
-  border-collapse: collapse;
-  width: 90%;
-  margin: 0 auto 20px;
-}
-
-.third-container-second-item table tbody tr {
-  border-bottom: 1px solid #444444;
-}
-
-.third-container-second-item table tbody tr td {
-  padding: 25px 3px;
-  vertical-align: middle;
-}
-
-.third-container-second-item table tbody tr td:first-child {
-  font-weight: bold;
-  font-size: 16px;
-  color: #21A937;
-}
-
-.third-container-second-item table tbody tr td:nth-child(2) {
-  font-weight: bold;
-  font-size: 12px;
-  color: #FFFFFF;
-  margin: 0 86px;
-  width: 100px;
-  text-align: center;
-  background-color: transparent;
-}
-
-.third-container-second-item table tbody tr td:nth-child(2) span {
-  display: inline-block;
-  background-color: #444444;
-  color: #FFFFFF;
-  font-size: 12px;
-  padding: 4px 12px;
-  /* ここでラベルの大きさを調整 */
-  border-radius: 2px;
-  width: 80px;
-  /* ラベルの横幅を固定 */
-  text-align: center;
-}
-
-.third-container-second-item table tbody tr td:nth-child(3) {
-  font-weight: bold;
-  font-size: 16px;
-  color: #444444;
-}
-
-@media screen and (max-width:1200px) {
-  .third-container-first {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width:951px) {
-  .third-container-first-item_one {
-    height: 671px;
-  }
-}
-
-@media screen and (max-width:821px) {
-  .third-container-first {
-    width: 60%;
-    margin: 0 auto;
+    margin-bottom: 58px;
   }
 
-  .third-container-first-item {
+  .p-treatment__text-pc {
+    display: none;
+  }
+
+  .p-treatment__text-sp {
     display: block;
+    line-height: 1.4em;
   }
-
-  .third-container-first-item_one {
-    margin: 0 auto;
-    width: 90%;
-  }
-
-  .third-container-first-item_one:nth-child(2) {
-    margin: 20px auto;
-  }
-}
-
-@media screen and (max-width:431px) {
-  .third-container-second {
-    width: 90%;
-  }
-
-  .third-container-second-item table tbody tr td:nth-child(1) {
-    display: inline-flex;
-    margin: 0 16px 0 0;
-  }
-
-  .third-container-second-item table tbody tr td:nth-child(2) {
-    display: inline-flex;
-    margin: 0;
-  }
-
-  /* 3つ目のセル（本文）の設定 */
-  .third-container-second-item table tbody tr td:nth-child(3) {
-    display: block;
-    margin-top: 5px;
-  }
-}
-
-.third-container-second-item div p {
-  text-align: right;
-  margin-right: 5%;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.third-container-second-item p::after {
-  content: "";
-  display: inline-block;
-  margin-left: 8px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 0 6px 8px;
-  border-color: transparent transparent transparent #333;
 }
 
 footer {
@@ -955,6 +777,7 @@ footer {
   border-top: 2px solid #E7E7E7;
   border-bottom: 2px solid #E7E7E7;
   margin-top: 28px;
+  color: #444444;
 }
 
 .opening-hours dt {
